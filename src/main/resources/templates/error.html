@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container col-md-offset-3 col-md-8 mt-lg-5">
+    <div class="row mt-2">
+        <div th:if="${param.invalid}" class="col-cm-8">
+            <p class="alert alert-danger">Invalid Verification Token</p>
+        </div>
+        <div th:if="${param.expired}" class="col-cm-8">
+            <p class="alert alert-info">This Verification has already expired</p>
+        </div>
+    </div>
+    <a href="#" th:href="@{/register}">Go to the register page</a>
+</div>
+</body>
+</html>
